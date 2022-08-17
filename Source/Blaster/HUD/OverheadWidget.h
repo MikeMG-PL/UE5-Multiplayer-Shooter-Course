@@ -18,4 +18,20 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* DisplayText;
+
+	UPROPERTY(meta = (BindWidget))
+	class UTextBlock* Nickname;
+
+	void SetDisplayText(FString TextToDisplay, bool bIsItNickName);
+
+	UFUNCTION(BlueprintCallable)
+	void ShowPlayerNetRole(APawn* InPawn, bool bLocal, bool bShow);
+
+	UFUNCTION(BlueprintCallable)
+	void ShowPlayerNickname(APlayerState* PlayerState, bool bShow);
+	
+protected:
+
+	virtual void OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld) override;	
+	
 };
