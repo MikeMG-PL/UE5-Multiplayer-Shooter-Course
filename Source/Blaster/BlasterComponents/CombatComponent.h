@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "CombatComponent.generated.h"
 
+class AWeapon;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BLASTER_API UCombatComponent : public UActorComponent
@@ -14,12 +15,21 @@ class BLASTER_API UCombatComponent : public UActorComponent
 
 public:
 	UCombatComponent();
+	friend class ABlasterCharacter;			// Friendship breaks encapsulation but a guy in the course told to fnck that
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	void EquipWeapon(AWeapon* WeaponToEquip);
+	
 protected:
 	virtual void BeginPlay() override;
 
-public:	
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+private:
+
+	UPROPERTY()
+	ABlasterCharacter* Character;
+	
+	UPROPERTY()
+	AWeapon* EquippedWeapon;
 
 		
 };
