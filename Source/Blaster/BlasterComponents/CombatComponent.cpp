@@ -10,7 +10,7 @@
 // Sets default values for this component's properties
 UCombatComponent::UCombatComponent()
 {
-	PrimaryComponentTick.bCanEverTick = false;			// WYŁĄCZONO!!!
+	PrimaryComponentTick.bCanEverTick = false;			// It's off
 }
 
 void UCombatComponent::BeginPlay()

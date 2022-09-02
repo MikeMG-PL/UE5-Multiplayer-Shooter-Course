@@ -8,7 +8,7 @@
 // Sets default values
 AWeapon::AWeapon()
 {
-	PrimaryActorTick.bCanEverTick = false; // WE'VE CHANGED IT lol idk why
+	PrimaryActorTick.bCanEverTick = false; // It's off!
 	bReplicates = true;
 
 	WeaponMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponMesh"));

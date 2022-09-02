@@ -15,7 +15,7 @@ class BLASTER_API UCombatComponent : public UActorComponent
 
 public:
 	UCombatComponent();
-	friend class ABlasterCharacter;			// Friendship breaks encapsulation but a guy in the course told to fnck that
+	friend class ABlasterCharacter;			// It's ok to use friendship here. Component is tightly bound to ABlasterCharacter
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	void EquipWeapon(AWeapon* WeaponToEquip);
